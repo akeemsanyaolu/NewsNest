@@ -5,11 +5,12 @@ import 'package:news/features/daily_news/domain/repository/article_repositry.dar
 
 class GetArticleUseCase
     implements UseCase<DataState<List<ArticleEntity>>, void> {
-  final ArticleRepository articleRepository;
+  final ArticleRepository _articleRepository;
 
-  GetArticleUseCase(this.articleRepository);
+  GetArticleUseCase(this._articleRepository);
+
   @override
   Future<DataState<List<ArticleEntity>>> call({void params}) {
-    return articleRepository.getNewsArticles();
+    return _articleRepository.getNewsArticles();
   }
 }
